@@ -1,5 +1,6 @@
 import './Navbar.css'
-import Button from './Button/Button'
+import Button from '../Button/Button'
+import CartWidget from '../../CartWidget/Cartwidget'
 
 const Navbar = () => {
     return (
@@ -16,6 +17,7 @@ const Navbar = () => {
                 <Button label = "Contacto" color = "orange" handleClick = {() =>console.log("Contacto")}/>
                 <Button label = "Carrito de compras" color = "pink" handleClick = {() =>console.log("Carrito de compras")}/>
             </div>
+            <CartWidget/>
         </nav>
     )
 }
