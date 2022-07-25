@@ -8,7 +8,7 @@ const Navbar = () => {
             <div>
                 Ecommerce
             </div>
-            <div>
+            <div className='pa'>
                 {}
                 <Button label = "Calzado" color = "blue" handleClick = {() =>console.log("Calzado")}/>
                 <Button label = "Indumentaria" color = "yellow" handleClick = {() =>console.log("Indumentaria")}/>
