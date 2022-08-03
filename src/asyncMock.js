@@ -34,7 +34,8 @@ export const getProducts = () => {
 export const getProductById = () => {
     return new Promise ((resolve) => {
         setTimeout(() => {
-            resolve([1])
+            resolve(products.price)
+            resolve(products[0])
         },2000)
 
     })

@@ -5,9 +5,9 @@ import './ItemDetail.css'
 
 const ItemDetail = ({id, name,img,category,description,price,stock}) => {
     
-    const handleOnAdd = (quantity) => {
-        console.log('agregue al carrito: ',quantity);
-    }
+    // const handleOnAdd = (quantity) => {
+    //     console.log('agregue al carrito: ',quantity);
+    // }
 
     return(
         <article className="CardItem">
