@@ -31,10 +31,10 @@ export const getProducts = () => {
     })
 }
 
-export const getProduct = () => {
+export const getProductById = () => {
     return new Promise ((resolve) => {
         setTimeout(() => {
-            resolve(products.price)
+            resolve([1])
         },2000)
 
     })

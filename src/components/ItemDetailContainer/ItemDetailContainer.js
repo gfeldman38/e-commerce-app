@@ -1,26 +1,23 @@
-import { useEffect } from "react"
-import { useState } from "react"
-import { getProduct } from "../../asyncMock"
-import ItemList from "../ItemList/ItemList"
+import './ItemDetailContainer.css'
+import { useState, useEffect } from 'react'
+import {getProductById} from '../../asyncMock'
+import ItemDetail from '../ItemDetail/ItemDetail'
 
-const ItemDetailContainer = ({greeting, setShow, show}) => {
-    const[product , setProduct] = useState([])
+const ItemDetailContainer = () => {
+    const[product , setProduct] = useState()
 
     useEffect(() => {
-        getProduct().then(response => {
+        getProductById('2').then(response => {
             setProduct(response);
         })
     },[])
 
-     
+    
 
     return (
-        <>
-        <h1>{greeting}</h1>
-        {/* <button onClick={() => setShow(!show)}>show/hide</button> */}
-        <ItemList product ={product}/>
-        <li>{product.name}</li>
-        </>
+        <div className="ItemDetailContainer">
+            <ItemDetail{...product}/>
+        </div>
     )
 }
 

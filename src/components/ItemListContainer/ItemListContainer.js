@@ -9,10 +9,18 @@ const ItemListContainer = ({greeting, setShow, show}) => {
     useEffect(() => {
         getProducts().then(response => {
             setProducts(response);
+        }).catch(Error =>{
+            console.log(Error)
+        }).finally (() => {
+            setLoading (false)
         })
     },[])
 
-     
+    if(loading) {
+        return <h1>Cargando productos...</h1>
+    }
+
+    
 
     return (
         <>
