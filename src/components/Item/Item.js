@@ -1,15 +1,29 @@
-const Item = ({products}) => {
+import "./Item.css"
+import { Link } from "react-router-dom"
 
-    const handleClick = (description) =>{
-        console.log(description)
+    const Item = ({id, name, img, price}) => {
+    
+    
+        return(
+            <article className="CardItem">
+                <header className="Header">
+                    <h2 className="ItemHeader">
+                        {name}
+                    </h2>
+                </header>
+                <picture>
+                    <img src={img} alt={name} className="ItemImg"/>
+                </picture>
+                <section>
+                    <p className="Info">
+                        Precio: ${price}
+                    </p>
+                </section>
+                <footer className="ItemFooter">
+                    <Link to={`/detail/${id}`} className="Option" >Ver detalle</Link>
+                </footer>
+            </article>
+        )
     }
-
-    return (
-    <>
-        <li >{products.name}</li>
-        <button onClick={handleClick}>Ver detalle</button>
-    </>
-)
-}
 
 export default Item

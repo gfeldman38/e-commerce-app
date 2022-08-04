@@ -1,13 +1,12 @@
 import './ItemDetail.css'
-// import ItemCount from '../ItemCount/ItemCount';
-
+import ItemCount from '../ItemCount/ItemCount';
 
 
 const ItemDetail = ({id, name,img,category,description,price,stock}) => {
     
-    // const handleOnAdd = (quantity) => {
-    //     console.log('agregue al carrito: ',quantity);
-    // }
+    const handleOnAdd = (quantity) => {
+        console.log('agregue al carrito: ',quantity);
+    }
 
     return(
         <article className="CardItem">
@@ -30,9 +29,9 @@ const ItemDetail = ({id, name,img,category,description,price,stock}) => {
                     precio: {price}
                 </p>
             </section>
-            {/* <footer className="ItemFooter">
+            <footer className="ItemFooter">
                 <ItemCount stock = {stock} onAdd={handleOnAdd} />
-            </footer> */}
+            </footer>
         </article>
     )
 }
