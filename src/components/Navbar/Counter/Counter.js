@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 const Counter = ({show, stock, initial, onAdd}) => {
     // const state = useState (10)
-    const [count, setCount] = useState(0)
+    const [count,quantity, setCount,setQuantity] = useState(0)
     useEffect(() => {
         // console.log ('function callback useEffect')
 
@@ -11,14 +11,14 @@ const Counter = ({show, stock, initial, onAdd}) => {
     }, [show])
 
 const decrement = () => {
-    if(count > initial){
-        setCount(prev => prev - 1)
+    if(quantity > initial){
+        setQuantity(prev => prev - 1)
     }
 }
 
 const increment = () => {
-    if(count < stock) {
-    setCount(prev => prev + 1)
+    if(quantity < stock) {
+    setQuantity(prev => prev + 1)
     }
 } 
 // console.log('va a renderizar')

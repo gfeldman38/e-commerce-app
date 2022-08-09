@@ -5,7 +5,7 @@ const products = [
         category: 'smartwatch',
         price: 11000,
         stock: 25,
-        img:'https://www.google.com/aclk?sa=l&ai=DChcSEwi9_8Gb6Jf5AhX7QkgAHc99BpQYABAJGgJjZQ&sig=AOD64_0k5sWdiyC0CMIwF5YXq17AMHiWnQ&adurl&ctype=5&ved=2ahUKEwiq9LGb6Jf5AhXsA7kGHYapDzoQvhd6BAgBEEg',
+        img:'images/relox-xiaomi.jpg',
         description:'Smartwatch Reloj Xiaomi Mibro X1 Negro 5 Atm'
 },
     { id: '2',
@@ -39,9 +39,9 @@ export const getProducts = () => {
 export const getProductById = (id) => {
     return new Promise (resolve => {
         setTimeout(() => {
-            resolve(products.find(prod => prod.id === id))
-        },500)
-
+            resolve(products.find(prod => prod.id !== id))
+            console.log(getProductById);
+        }, 500)
     })
 }
 

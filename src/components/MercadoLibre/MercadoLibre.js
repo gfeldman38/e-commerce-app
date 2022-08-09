@@ -15,14 +15,23 @@ const MercadoLibre = () => {
         .then(res => setProducts(res.results))
 }
 
+const handleKeyDown = (e) => {
+    console.log(e.target.value)
+    setInput(e.target.value)
+    console.log(e)
+}
+
 return (
     <>
         <h1> MercadoLibre</h1>
-        <input 
-            value={input}
-            onChange = {(e) => setInput(e.target.value)}
-        />
-        <button onClick={handleSearch}>Buscar</button>
+        <form onSubmit={handleSearch}>
+            <input 
+                // value={input}
+                // onChange = {(e) => setInput(e.target.value)}
+                onKeyDown = {handleKeyDown}
+            />
+            <button type="submit">Buscar</button>
+        </form>
         {products.map(prod => {
             return (
             <div key = {prod.id}>
